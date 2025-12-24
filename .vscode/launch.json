@@ -1,0 +1,52 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Frontend: Debug",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/frontend",
+            "presentation": {
+                "group": "Frontend",
+                "order": 1
+            }
+        },
+        {
+            "name": "Backend: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload",
+                "--port",
+                "8000"
+            ],
+            "cwd": "${workspaceFolder}/backend",
+            "jinja": true,
+            "presentation": {
+                "group": "Backend",
+                "order": 2
+            }
+        },
+        {
+            "name": "ETL: Script",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/etl/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/etl"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack (Frontend + Backend)",
+            "configurations": [
+                "Frontend: Debug",
+                "Backend: FastAPI"
+            ],
+            "stopAll": true
+        }
+    ]
+}
