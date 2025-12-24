@@ -1,64 +1,62 @@
-# Retail Analytics Platform & AI Agent 🛍️🤖
+# 🛒 Retail Analytics Platform & AI Agent 🤖
 
-A comprehensive full-stack retail platform featuring a persistent shopping cart, favorites system, and an AI agent powered by n8n and Ollama.
-
-## 🏗️ Project Architecture
-
-The project is structured as a main orchestrator with submodules:
-
-- **[Backend](https://github.com/jlpbiuma/retail-analytics-demo-backend.git)**: FastAPI service handling commerce logic, products, and agent proxy.
-- **[Frontend](https://github.com/jlpbiuma/retail-analytics-demo-frontend.git)**: Next.js application with a modern UI and sticky agent bubble.
-- **[ETL](https://github.com/jlpbiuma/retail-analytics-demo-etl.git)**: Python scripts for data synchronization and database schema management.
-- **Database**: PostgreSQL 15.
+A state-of-the-art, "Smart Commerce" platform that blends a high-performance e-commerce engine with advanced AI choreography. This project demonstrates a production-ready architecture using micro-services, secure AI agents, and persistent state management across multiple repositories.
 
 ---
 
-## 🚀 Getting Started
+## 🌟 Key Features
 
-### 1. Clone the project with submodules
+### 🛍️ Secure Commerce Engine
+- **Persistent Cart**: A full-stack shopping cart system that survives sessions and syncs across devices.
+- **Wishlist & Favorites**: Smart-save system for users to build their curated collections.
+- **User Intelligence**: Personalized profile dashboards featuring order histories and dynamic cart carousels.
+
+### 🤖 AI Orchestration (n8n + Ollama)
+- **Safe Tooling**: The AI agent utilizes the backend as a secure "middleware" proxy. It can search, add to cart, and manage favorites without ever touching the database directly.
+- **Long-term Memory**: Powered by Postgres Chat Memory, allowing the agent to remember your name, preferences, and previous purchases.
+- **Local Inference**: Uses local Ollama (llama3.2) to ensure data privacy and high speed.
+
+### 🏗️ Advanced Infrastructure
+- **Multi-Repo Architecture**: Distributed system using Git Submodules for independent scaling of Backend, Frontend, and ETL.
+- **Docker Dynamic Orchestration**: A single `.env` file dynamically configures ports, secrets, and internal service URLs across the entire stack.
+
+---
+
+## 🏗️ Project Topology
+
+The system is organized into specialized repositories:
+
+- **🚀 [Backend](https://github.com/jlpbiuma/retail-analytics-demo-backend.git)**: FastAPI orchestrator handling the commerce layer and security proxy.
+- **🎨 [Frontend](https://github.com/jlpbiuma/retail-analytics-demo-frontend.git)**: Next.js 14 Web App with a premium glassmorphic UI and sticky assistant bubble.
+- **⚙️ [ETL](https://github.com/jlpbiuma/retail-analytics-demo-etl.git)**: Automated data pipeline for schema management and ingestion.
+- **🗄️ Database**: PostgreSQL 15 hosting commerce data and persistent AI memory.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone & Initialize
 ```bash
 git clone --recursive https://github.com/jlpbiuma/retail-analytics-demo.git
 cd retail-analytics-complete
 ```
 
-### 2. Set up Environment Variables
-Copy the template and adjust values:
+### 2. Configure Environment 🔑
+The project uses **Docker Interpolation**. One file controls everything:
 ```bash
 cp .env.example .env
+# Open .env and adjust your ports or DB credentials
 ```
 
-### 3. Start the Infrastructure
+### 3. Launch the Stack 🐳
 ```bash
 docker-compose up -d
 ```
-
-### 4. Initialize Data
-Run the ETL scripts to populate the database:
-```bash
-cd etl
-uv run python sync_sequences.py
-# (Run other ETL scripts as needed)
-```
-
----
-
-## 🤖 AI Agent Integration (n8n)
-
-The AI agent is orchestrated by **n8n** to provide secure, tool-enabled interactions.
-
-- **Orchestrator**: n8n Webhook -> AI Agent Node -> Ollama LLM.
-- **Tools**: The agent can search products, manage carts, and check favorites via backend proxy.
-- **Memory**: Persistent Postgres Chat Memory stores conversation history by `user_id`.
-
-### n8n Setup
-1. Access n8n at `http://localhost:5678`.
-2. Import the agent workflow.
-3. Toggle the workflow to **Active** to enable the production webhook.
 
 ---
 
 ## 🛠️ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS, Lucide Icons, Sonner.
 - **Backend**: FastAPI, SQLAlchemy, Pydantic, HTTPX.
-- **AI**: Ollama (llama3.2), n8n.
-- **Database**: PostgreSQL.
+- **AI**: Ollama, n8n (Orchestrator).
+- **Database**: PostgreSQL 15.
