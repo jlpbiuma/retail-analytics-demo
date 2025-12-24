@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/jlpbiuma/retail-analytics-demo-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/jlpbiuma/retail-analytics-demo-frontend.git
+[submodule "etl"]
+	path = etl
+	url = https://github.com/jlpbiuma/retail-analytics-demo-etl.git
