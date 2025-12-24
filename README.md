@@ -6,9 +6,9 @@ A comprehensive full-stack retail platform featuring a persistent shopping cart,
 
 The project is structured as a main orchestrator with submodules:
 
-- **[Backend](https://github.com/REPLACE_WITH_YOUR_BACKEND_URL)**: FastAPI service handling commerce logic, products, and agent proxy.
-- **[Frontend](https://github.com/REPLACE_WITH_YOUR_FRONTEND_URL)**: Next.js application with a modern UI and sticky agent bubble.
-- **[ETL](https://github.com/REPLACE_WITH_YOUR_ETL_URL)**: Python scripts for data synchronization and database schema management.
+- **[Backend](https://github.com/jlpbiuma/retail-analytics-demo-backend.git)**: FastAPI service handling commerce logic, products, and agent proxy.
+- **[Frontend](https://github.com/jlpbiuma/retail-analytics-demo-frontend.git)**: Next.js application with a modern UI and sticky agent bubble.
+- **[ETL](https://github.com/jlpbiuma/retail-analytics-demo-etl.git)**: Python scripts for data synchronization and database schema management.
 - **Database**: PostgreSQL 15.
 
 ---
@@ -17,7 +17,7 @@ The project is structured as a main orchestrator with submodules:
 
 ### 1. Clone the project with submodules
 ```bash
-git clone --recursive <MAIN_REPO_URL>
+git clone --recursive https://github.com/jlpbiuma/retail-analytics-demo.git
 cd retail-analytics-complete
 ```
 
